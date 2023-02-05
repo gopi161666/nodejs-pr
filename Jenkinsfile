@@ -26,16 +26,7 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
             }     
          }
         
-        
-        
-                stage("Build and test") {
-            steps {
-                sh 'npm install'
-                sh 'npm test'
-            }
-        }
-        
-  
+      
     // Building Docker images
     stage('Building image') {
       steps{

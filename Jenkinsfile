@@ -22,7 +22,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'ee1f5da5-60b2-4a3c-962b-77b27bc0f55b', url: 'https://github.com/gopi161666/nodejs-pr.git']])  
+checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ee1f5da5-60b2-4a3c-962b-77b27bc0f55b', url: 'https://github.com/gopi161666/nodejs-pr.git']])  
             }     
          }
   

@@ -25,6 +25,16 @@ pipeline {
 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ee1f5da5-60b2-4a3c-962b-77b27bc0f55b', url: 'https://github.com/gopi161666/nodejs-pr.git']])  
             }     
          }
+        
+        
+        
+                stage("Build and test") {
+            steps {
+                sh 'npm install'
+                sh 'npm test'
+            }
+        }
+        
   
     // Building Docker images
     stage('Building image') {
@@ -37,12 +47,7 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
    
         
         
-        stage("Build and test") {
-            steps {
-                sh 'npm install'
-                sh 'npm test'
-            }
-        }
+
         
         
     // Uploading Docker images into AWS ECR

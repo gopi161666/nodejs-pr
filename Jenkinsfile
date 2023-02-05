@@ -35,6 +35,14 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
       }
     }
    
+        
+        stage("Run unit tests") {
+            steps {
+               
+                sh 'npm test'
+            }
+        }
+        
     // Uploading Docker images into AWS ECR
     stage('Pushing to ECR') {
      steps{  
